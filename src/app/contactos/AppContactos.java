@@ -35,5 +35,8 @@ public class AppContactos {
         } while (condicion);
 
     }
+    public void holi2(){
+        
+    }
 
 }
