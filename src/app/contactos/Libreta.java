@@ -60,6 +60,8 @@ public class Libreta {
         }
     } 
     //EDITAR DATOS
-    
+    public void holi (){
+        
+    }
     
 }
