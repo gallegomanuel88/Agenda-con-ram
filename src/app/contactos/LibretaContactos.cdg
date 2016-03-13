@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="LibretaContactos">
+  <ClassDiagramComponents>
+    <Class name="Usuario" package="" visibility="public" xPosition="58.0" yPosition="57.0">
+      <Fields>
+        <Field name="pass" type="String" visibility="private"/>
+        <Field name="usuario" type="String" visibility="private"/>
+        <Field name="libreta" type="Libreta" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="borrarLibreta" returnType="void" visibility="public"/>
+        <Method name="crearLibreta" returnType="void" visibility="public"/>
+        <Method name="exportarLibreta" returnType="void" visibility="public"/>
+        <Method name="modificarLibreta" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Libreta" package="" visibility="public" xPosition="325.0" yPosition="57.0">
+      <Fields>
+        <Field name="propietario" type="String" visibility="private"/>
+        <Field name="arrayContacto" type="Contacto[]" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="propietario"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="listar" returnType="void" visibility="public"/>
+        <Method name="cualLibre" returnType="void" visibility="public"/>
+        <Method name="engadir" returnType="void" visibility="public"/>
+        <Method name="engadirGrupo" returnType="void" visibility="public"/>
+        <Method name="borrarGrupo" returnType="void" visibility="public"/>
+        <Method name="listarGrupo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Grupo" package="" visibility="public" xPosition="710.0" yPosition="57.0">
+      <Fields>
+        <Field name="nombreGrupo" type="String" visibility="private"/>
+        <Field name="arrayContrato" type="Contrato[]" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="engadirContactosGrupo" returnType="void" visibility="public"/>
+        <Method name="listarContactoGrupo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Contacto" package="" visibility="public" xPosition="669.0" yPosition="401.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="telf" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="telf"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="usuario libreta" source="Usuario" target="Libreta" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="libreta grupo" source="Libreta" target="Grupo" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="grupo contacto" source="Grupo" target="Contacto" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
